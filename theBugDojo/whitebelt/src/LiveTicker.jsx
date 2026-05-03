@@ -5,7 +5,7 @@ export default function LiveTicker() {
 
   useEffect(() => {
     const id = setInterval(() => {
-      setCount(count + 1);
+      setCount(count=>count + 1);
     }, 1000);
     return () => clearInterval(id);
   }, []);

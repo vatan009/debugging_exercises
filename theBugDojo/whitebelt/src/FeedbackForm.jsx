@@ -16,10 +16,11 @@ export default function FeedbackForm() {
         onChange={(e) => setRating(Number(e.target.value))}
         placeholder="Rating 1-5"
       />
+      {/* { console.log(submitted)} */}
       {submitted ? (
         <p>Thanks for your rating: {rating}</p>
       ) : (
-        <button onClick={handleSubmit()}>Submit</button>
+        <button onClick={()=>handleSubmit()}>Submit</button>
       )}
     </div>
   );

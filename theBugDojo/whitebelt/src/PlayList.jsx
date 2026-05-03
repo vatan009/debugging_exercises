@@ -3,7 +3,8 @@ import { useReducer, useState } from "react";
 function reducer(state, action) {
   switch (action.type) {
     case "ADD":
-      return { tracks: [...state.tracks, action.title] };
+      // console.log(state)
+      return { tracks: [...state.tracks, action.name] };
     case "CLEAR":
       return { tracks: [] };
     default:
@@ -17,6 +18,7 @@ export default function Playlist() {
 
   function handleAdd() {
     if (!input.trim()) return;
+    // console.log(input)
     dispatch({ type: "ADD", name: input });
     setInput("");
   }
@@ -30,6 +32,7 @@ export default function Playlist() {
       />
       <button onClick={handleAdd}>Add Track</button>
       <ul>
+        {/* { console.log(state)} */}
         {state.tracks.map((track, i) => (
           <li key={i}>{track}</li>
         ))}

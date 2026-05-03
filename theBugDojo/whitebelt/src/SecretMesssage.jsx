@@ -6,7 +6,7 @@ export default function SecretMessage() {
   return (
     <div>
       {visible && <p>The secret is: React re-renders on state change.</p>}
-      <button onClick={() => setVisible(false)}>
+      <button onClick={() => setVisible(!visible)}>
         {visible ? "Hide Secret" : "Show Secret"}
       </button>
     </div>

@@ -11,17 +11,19 @@ export default function VotingPanel() {
 
   function handleVote(id) {
     const target = options.find((o) => o.id === id);
-    target.score += 1;
-    setOptions(options);
+    // target.score += 1;
+    setOptions((options) =>
+      options.map((item) =>
+        item === target ? { ...item, score: item.score + 1 } : item,
+      ),
+    );
   }
 
   return (
     <div>
       {options.map((option) => (
         <div key={option.id}>
-          <span>
-            {option.label}: {option.score}
-          </span>
+          <span>{option.label}: {option.score}</span>
           <button onClick={() => handleVote(option.id)}>Vote</button>
         </div>
       ))}
