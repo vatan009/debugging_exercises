@@ -2,6 +2,8 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import ShortcutForm from "./ShortcutForm";
 import DoubledCounter from "./DoubledCounter";
+import MemoSearch from "./MemoSearch";
+import UndoEditor from "./UndoEditor";
 // import './index.css'
 // import App from './App.jsx'
 // import NameInput from "./NameInput.jsx";
@@ -20,8 +22,11 @@ createRoot(document.getElementById("root")).render(
   <StrictMode>
     <div>
       {/* <h1>All Components</h1> */}
-      <ShortcutForm />
+      {/* <ShortcutForm /> */}
       {/* <DoubledCounter/> */}
+
+      <MemoSearch />
+      <UndoEditor/>
 
     </div>
   </StrictMode>,

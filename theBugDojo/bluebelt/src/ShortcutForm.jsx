@@ -1,8 +1,12 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, forwardRef } from "react";
 
-function ActionButton({ onClick, children }) {
-  return <button onClick={onClick}>{children}</button>;
-}
+const ActionButton = forwardRef(({ onClick, children }, ref) => {
+  return (
+    <button ref={ref} onClick={onClick}>
+      {children}
+    </button>
+  );
+});
 
 export default function ShortcutForm() {
   const [log, setLog] = useState([]);
@@ -11,15 +15,14 @@ export default function ShortcutForm() {
   useEffect(() => {
     function handleKey(e) {
       if (e.key === "Enter") {
-        console.log(btnRef)
         if (btnRef.current) {
-          btnRef.current.click();
+          handleAction();
         } else {
           setLog((prev) => [...prev, "ref is null — shortcut failed"]);
         }
       }
-      a;
     }
+
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
   }, []);
@@ -33,6 +36,7 @@ export default function ShortcutForm() {
       <ActionButton ref={btnRef} onClick={handleAction}>
         Run Action
       </ActionButton>
+
       <ul>
         {log.map((entry, i) => (
           <li key={i}>{entry}</li>
