@@ -18,18 +18,30 @@ export default function UndoEditor() {
   }
 
   function handleSave(id) {
-    setHistory((prev) => [...prev, items]);
-    const copy = [...items];
-    const target = copy.find((i) => i.id === id);
-    target.name = draft;
+    // ✅ FIX: avoid mutation
+    const copy = items.map((i) => (i.id === id ? { ...i, name: draft } : i));
+
     setItems(copy);
+
+    // store previous state
+    setHistory((p) => [...p, items]);
+
+    console.log("--------------------");
     setEditingId(null);
+    setDraft("");
   }
 
   function handleUndo() {
     if (history.length === 0) return;
-    setItems(history[history.length - 1]);
-    setHistory((prev) => prev.slice(0, -1));
+
+    setHistory((prev) => {
+      const last = prev[prev.length - 1]; // ✅ get last snapshot
+      const temp = prev.slice(0, prev.length - 1);
+
+      setItems(last); // ✅ restore
+
+      return temp;
+    });
   }
 
   return (
@@ -41,6 +53,7 @@ export default function UndoEditor() {
           ) : (
             <span>{item.name}</span>
           )}
+
           {editingId === item.id ? (
             <button onClick={() => handleSave(item.id)}>Save</button>
           ) : (
@@ -48,7 +61,11 @@ export default function UndoEditor() {
           )}
         </div>
       ))}
+
       <button onClick={handleUndo}>Undo</button>
     </div>
   );
 }
+
+
+//seen the soln

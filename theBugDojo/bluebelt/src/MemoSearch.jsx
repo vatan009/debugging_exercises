@@ -7,7 +7,7 @@ export default function MemoSearch() {
 
   const filtered = useMemo(
     () => ITEMS.filter((i) => i.toLowerCase().includes(query.toLowerCase())),
-    []
+    [query]
   );
 
   return (
