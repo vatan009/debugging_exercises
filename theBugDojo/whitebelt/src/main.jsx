@@ -13,6 +13,7 @@ import LiveCount from "./LiveCount.jsx";
 import SearchList from "./SearchList.jsx";
 import VotingPanel from "./VotinPanel.jsx";
 import SettingsPanel from "./SettingsPannel.jsx";
+import ProfilePanel from "./ProfilePanel.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -22,13 +23,14 @@ createRoot(document.getElementById("root")).render(
       <Playlist /> */}
       {/* <SecretMessage /> */}
       {/* <SettingsPanel/> */}
-      <LiveTicker />
+      {/* <LiveTicker /> */}
       {/* <TaskList /> */}
       {/* <Counter /> */}
       {/* <FeedbackForm /> */}
       {/* <LiveCount /> */}
       {/* <SearchList /> */}
       {/* <VotingPanel /> */}
+      <ProfilePanel/>
     </div>
   </StrictMode>,
 );
