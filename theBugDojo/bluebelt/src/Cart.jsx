@@ -5,8 +5,11 @@ export default function Cart() {
   const [total, setTotal] = useState(0);
 
   function addItem() {
-    setCount(count + 1);
-    setTotal(total + count * 10);
+    setCount((count) => {
+      let temp = count + 1;
+      setTotal(temp * 10);
+      return temp;
+    });
   }
 
   return (
