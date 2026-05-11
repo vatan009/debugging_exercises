@@ -1,0 +1,458 @@
+```jsx id="4k2n4s"
+// =====================================================
+// QUESTION 1 — FIRST EFFECT
+// =====================================================
+
+/*
+
+GOAL:
+Understand:
+render -> effect
+
+TASK:
+1. Print:
+   "Rendered"
+
+2. Print:
+   "Effect Ran"
+
+QUESTION:
+Which runs first?
+
+LEARN:
+Effects run AFTER render.
+
+*/
+
+// =====================================================
+// QUESTION 2 — RUN ONLY ONCE
+// =====================================================
+
+/*
+
+TASK:
+1. Create counter
+2. Print:
+   "Mounted"
+
+ONLY once.
+
+3. Click button many times.
+
+QUESTION:
+Why does effect not rerun?
+
+LEARN:
+[] dependency array
+
+*/
+
+// =====================================================
+// QUESTION 3 — EFFECT ON STATE CHANGE
+// =====================================================
+
+/*
+
+TASK:
+1. Create counter
+2. Print:
+   "Count Changed"
+
+ONLY when count changes.
+
+LEARN:
+dependency array values
+
+*/
+
+// =====================================================
+// QUESTION 4 — MULTIPLE DEPENDENCIES
+// =====================================================
+
+/*
+
+TASK:
+1. Create:
+   - count state
+   - text state
+
+2. Effect should run when:
+   - count changes
+   - OR text changes
+
+QUESTION:
+What happens if one dependency is removed?
+
+*/
+
+// =====================================================
+// QUESTION 5 — INPUT TRACKER
+// =====================================================
+
+/*
+
+TASK:
+1. Input field
+2. Print:
+   "Typing..."
+
+whenever input changes.
+
+3. Show typed text.
+
+LEARN:
+effects reacting to input state
+
+*/
+
+// =====================================================
+// QUESTION 6 — DOCUMENT TITLE
+// =====================================================
+
+/*
+
+TASK:
+1. Create counter
+2. Update browser tab title:
+   "Count: X"
+
+LEARN:
+DOM side effects
+
+HINT:
+document.title
+
+*/
+
+// =====================================================
+// QUESTION 7 — TIMER
+// =====================================================
+
+/*
+
+TASK:
+1. Create timer
+2. Increase every second
+
+LEARN:
+setInterval inside effect
+
+*/
+
+// =====================================================
+// QUESTION 8 — TIMER CLEANUP
+// =====================================================
+
+/*
+
+TASK:
+1. Fix memory leak
+2. Cleanup timer properly
+
+QUESTION:
+What happens without cleanup? : timer goes on infinity may cause memory leak
+
+HINT:
+return () => {}
+
+*/
+
+// =====================================================
+// QUESTION 9 — START/STOP TIMER
+// =====================================================
+
+/*
+
+TASK:
+1. Add Start button
+2. Add Stop button
+3. Timer should pause correctly
+
+LEARN:
+cleanup + conditions
+
+*/
+
+// =====================================================
+// QUESTION 10 — WINDOW RESIZE LISTENER
+// =====================================================
+
+/*
+
+TASK:
+1. Show window width
+2. Update width on resize
+
+LEARN:
+event listeners inside effects
+
+HINT:
+window.addEventListener
+
+*/
+
+// =====================================================
+// QUESTION 11 — REMOVE EVENT LISTENER
+// =====================================================
+
+/*
+
+TASK:
+1. Cleanup resize listener
+
+QUESTION:
+Why cleanup important here?
+
+LEARN:
+avoiding duplicate listeners
+
+*/
+
+// =====================================================
+// QUESTION 12 — API FETCH
+// =====================================================
+
+/*
+
+TASK:
+1. Fetch users from:
+   https://jsonplaceholder.typicode.com/users
+
+2. Store users
+3. Render names
+
+LEARN:
+API calls in effects
+
+*/
+
+// =====================================================
+// QUESTION 13 — LOADING STATE
+// =====================================================
+
+/*
+
+TASK:
+1. Add loading state
+2. Show:
+   "Loading..."
+
+while fetching.
+
+LEARN:
+real-world fetching pattern
+
+*/
+
+// =====================================================
+// QUESTION 14 — ERROR HANDLING
+// =====================================================
+
+/*
+
+TASK:
+1. Handle fetch errors
+2. Show error message
+
+LEARN:
+try/catch in async effects
+
+*/
+
+// =====================================================
+// QUESTION 15 — SEARCH API
+// =====================================================
+
+/*
+
+TASK:
+1. Input field
+2. Fetch based on typed value
+
+EXAMPLE:
+typing "react"
+fetches related results.
+
+LEARN:
+effects depending on input
+
+*/
+
+// =====================================================
+// QUESTION 16 — DEBOUNCING
+// =====================================================
+
+/*
+
+TASK:
+1. Wait 500ms before API call
+
+QUESTION:
+Why debounce useful?
+
+LEARN:
+cleanup with setTimeout
+
+*/
+
+// =====================================================
+// QUESTION 17 — INFINITE LOOP BUG
+// =====================================================
+
+/*
+
+TASK:
+1. Create effect that accidentally
+   causes infinite rerenders.
+
+2. Fix it.
+
+LEARN:
+dependency mistakes
+
+*/
+
+// =====================================================
+// QUESTION 18 — LOCAL STORAGE SAVE
+// =====================================================
+
+/*
+
+TASK:
+1. Create input
+2. Save text to localStorage
+
+LEARN:
+persistent side effects
+
+HINT:
+localStorage.setItem
+
+*/
+
+// =====================================================
+// QUESTION 19 — LOCAL STORAGE LOAD
+// =====================================================
+
+/*
+
+TASK:
+1. Load saved text on first render
+
+LEARN:
+initial effect
+
+*/
+
+// =====================================================
+// QUESTION 20 — DARK MODE
+// =====================================================
+
+/*
+
+TASK:
+1. Toggle dark mode
+2. Add/remove class on body
+
+LEARN:
+DOM manipulation effects
+
+*/
+
+// =====================================================
+// QUESTION 21 — CLEANUP ORDER
+// =====================================================
+
+/*
+
+TASK:
+1. Print:
+   "Effect Started"
+
+2. Print:
+   "Cleanup"
+
+3. Change dependency repeatedly.
+
+OBSERVE:
+cleanup happens BEFORE next effect.
+
+This is one of the MOST important
+useEffect concepts.
+
+*/
+
+// =====================================================
+// QUESTION 22 — MULTIPLE EFFECTS
+// =====================================================
+
+/*
+
+TASK:
+1. Use 3 separate effects
+2. Each should track different things
+
+LEARN:
+effects should be separated by responsibility
+
+*/
+
+// =====================================================
+// QUESTION 23 — CHAT APP SIMULATION
+// =====================================================
+
+/*
+
+TASK:
+1. Simulate:
+   "User Connected"
+
+2. Cleanup:
+   "User Disconnected"
+
+LEARN:
+subscriptions
+
+*/
+
+// =====================================================
+// QUESTION 24 — CUSTOM HOOK
+// =====================================================
+
+/*
+
+TASK:
+Create:
+useWindowWidth()
+
+LEARN:
+effects inside custom hooks
+
+*/
+
+// =====================================================
+// QUESTION 25 — MASTER CHALLENGE
+// =====================================================
+
+/*
+
+BUILD:
+Mini Notes App
+
+FEATURES:
+1. Add notes
+2. Save to localStorage
+3. Load notes
+4. Search notes
+5. Debounce search
+6. Dark mode
+7. Auto-save
+
+YOU MUST USE:
+- useEffect
+- cleanup
+- dependency arrays
+
+*/
+```
+```
