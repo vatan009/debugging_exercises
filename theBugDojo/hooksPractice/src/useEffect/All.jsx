@@ -9,14 +9,19 @@ function All() {
 
   useEffect(() => {
     if (start) {
+
       timer = setInterval(() => {
         sett((prev) => prev + 1);
-      }, 1000);
+      }, 1000); console.log("timer : ", timer,typeof(timer));
+    }
+    else {
+       console.log('timer is stopped',timer);
     }
 
-    return () => {
-      clearInterval(timer);
-    };
+
+    // return () => {
+    //   clearInterval(timer);
+    // };
   }, [start]);
 
   return (
