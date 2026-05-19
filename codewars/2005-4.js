@@ -1,10 +1,10 @@
-function correctTail(bod, tail ;
+function correctTail(body, tail) {
+  sub = body.substr(body.length - tail.length);
 
-  sub = body.substr(bodylength-(tail.length)
-
-  if sub = tail) ;
-    return true
+  if (sub === tail) {
+    return true;
+  } else {
+    return false;
   }
-  else
-    return false
-
+}
+// conscept : arr.length, body.substr(1)

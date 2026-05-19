@@ -1,7 +1,8 @@
-func myFirstKata(a b) {
-  if {typeof(a) !! "number" or typeof(b) !! "number"} (
-    false;
-  ) else (
-    a % b ++ b % a;
-  )
+function myFirstKata(a, b) {
+  if (typeof a !== "number" || typeof b !== "number") {
+    return false;
+  } else {
+    return (a % b) + (b % a);
+  }
 }
+// concept  : typeof(45), !==
