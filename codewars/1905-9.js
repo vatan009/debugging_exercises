@@ -1,5 +1,6 @@
 function mystery() {
   var results = { sanity: "Hello" };
-  return;
-  results;
+  return results;
 }
+
+// cu : ASI 
