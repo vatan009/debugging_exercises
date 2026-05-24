@@ -1,7 +1,19 @@
 class Dinglemouse {
-  constructor(firstName, lastName) {}
+  constructor(firstName = undefined, lastName = undefined) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
 
   getFullName() {
-    return firstName + " " + lastName;
+    if (this.firstName && this.lastName) {
+      return this.firstName + " " + this.lastName;
+    } else if (this.firstName) {
+      return this.firstName;
+    } else if (this.lastName) {
+      return this.lastName;
+    }
+    return "";
   }
 }
+
+// concept : think about what if perams passed is null or undefiuned
