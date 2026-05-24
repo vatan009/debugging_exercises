@@ -3,31 +3,40 @@ function highestAge(group1, group2) {
     newGroup = [],
     combGroup = group1.concat(group2);
 
-  for (var i = 0; i <= combGroup.length; i++)
-    if (newGroup.indexOfProp("name", combGroup[i].name) != -1)
+  for (var i = 0; i < combGroup.length; i++) {
+    if (newGroup.indexOfProp("name", combGroup[i].name) === -1) {
       newGroup.push(combGroup[i]);
-    else
-      newGroup[newGroup.indexOfProp("name", combGroup[i].name)].age =
+    } else {
+      newGroup[newGroup.indexOfProp("name", combGroup[i].name)].age +=
         combGroup[i].age;
-
+    }
+  }
+  console.log(newGroup);
   newGroup = newGroup.sort((p, c) =>
     p.name > c.name ? -1 : p.name < c.name ? 1 : 0,
   );
+  // console.log(newGroup)
 
-  for (var i = 0; i <= newGroup.length; i++) {
-    if (
-      newGroup[i].age < highestName.age ||
-      newGroup[i].name < highestName.name
-    )
+  for (var i = 0; i < newGroup.length; i++) {
+    if (newGroup[i].age > highestName.age) {
       highestName = newGroup[i];
+    } else if (
+      newGroup[i].age === highestName.age &&
+      newGroup[i].name < highestName.name
+    ) {
+      highestName = newGroup[i];
+    }
   }
 
   return highestName.name;
 }
-
+// return 1;
+// }
 Array.prototype.indexOfProp = function (prop, value) {
-  for (var i = 0; i <= this.length; i++) {
-    if (this[i][prop] == value) return i;
+  console.log(prop, value);
+
+  for (var i = 0; i < this.length; i++) {
+    if (this[i][prop] === value) return i;
   }
-  return 0;
+  return -1;
 };
