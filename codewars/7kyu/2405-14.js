@@ -1,3 +1,3 @@
 function semicolonSeparationToCommaSeparation(input) {
-  return input.split(";").join(",");
+  return input.split(";")._join(",");
 }

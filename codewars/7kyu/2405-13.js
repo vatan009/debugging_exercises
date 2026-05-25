@@ -8,7 +8,7 @@ function makePizza(pieces) {
   return result;
 }
 function make(step) {
-  switch (step) {
+  switch (step + 1) {
     case 5:
       return "P";
     case 4:
