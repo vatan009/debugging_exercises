@@ -1,8 +1,7 @@
 var time = Date.now();
 console.log(time);
 var data = (function returnSomeData(time) {
-  return
-  {
+  return {
     name: "__B00013",
     timeStamp: this.time || "unknown",
     type: "raw",
@@ -11,3 +10,4 @@ var data = (function returnSomeData(time) {
     var3: 0x00040,
   };
 })();
+// concept used : asi

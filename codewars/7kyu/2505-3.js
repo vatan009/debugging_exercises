@@ -1,10 +1,10 @@
 function myFunction() {
-  var MyObject = {
-    objProperty: "string"
-    objMethod: function() {
-      return myObject.objProperty;
-		}
-  }
+  var myObject = {
+    objProperty: "string",
+    objMethod: function () {
+      return this.objProperty;
+    },
+  };
 
-  return myObject.Objmethod();
-};
+  return myObject;
+}
