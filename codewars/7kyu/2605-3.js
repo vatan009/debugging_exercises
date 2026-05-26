@@ -4,5 +4,5 @@
  * @return {Array} of integer numbers
  */
 var parseNumbers = function (intStrs) {
-  return intStrs.map(parseInt);
+  return intStrs.map((e) => parseInt(e));
 };
