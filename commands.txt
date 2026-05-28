@@ -1,1 +1,1 @@
-1..10 | ForEach-Object { New-Item "2105-$_.js" -ItemType File }
+1..10 | ForEach-Object { New-Item "2105-$_.js" -ItemType File } 
