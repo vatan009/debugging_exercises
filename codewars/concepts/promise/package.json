@@ -1,0 +1,7 @@
+{
+  "type": "module",
+  "dependencies": {
+    "acorn": "^1.0.5",
+    "acorn-walk": "^8.3.5"
+  }
+}
